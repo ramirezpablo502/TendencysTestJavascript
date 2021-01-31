@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/alertify.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Tendencys Test</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="./img/logo.png" alt="logo-tendencys" class="logo-image">
+        </a>
+    </nav>
+
+    <br/>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card-order-container">
+                    <div class="card-order-content">
+                        <p id="global_total_orders" class="title">0</p>
+                        <p>Total orders</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card-order-container">
+                    <div class="card-order-content">
+                        <p id="glogal_total_profit" class="title">0</p>
+                        <p>Total profit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div class="container">
+        <div class="container-button-left" style="margin-bottom: 10px;">
+            <button data-toggle="modal" data-target="#exampleModalAdd" type="button" class="btn btn-primary">Add item</button>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Number</th>
+                            <th scope="col">Sku</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-data">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container-button-left">
+            <button onclick="finalizePurchase();" type="button" class="btn btn-success">Pay</button>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+
+    <div id="modal-info">
+
+    </div>
+
+    <div class="modal fade" id="exampleModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalAddLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalAddLabel">Add item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" style="margin-bottom: 10px;">
+                            <div class="col-sm">
+                                <p class="info-title">Sku</p>
+                                <input type="number" class="form-control" id="input-sku" placeholder="Enter sku">
+                            </div>
+                            <div class="col-sm">
+                                <p class="info-title">Name</p>
+                                <input type="text" class="form-control" id="input-name" placeholder="Enter name">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="info-title">Quantity</p>
+                                <input type="number" class="form-control" id="input-quantity" placeholder="Enter quantity">
+                            </div>
+                            <div class="col-sm">
+                                <p class="info-title">Price</p>
+                                <input type="number" class="form-control" id="input-price" placeholder="Enter price">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="addItem()">Save item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/alertify.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
